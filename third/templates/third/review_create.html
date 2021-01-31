@@ -1,0 +1,18 @@
+{% extends 'third/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class = "container">
+    <form action = "{% url 'review-create' restaurant_id=item.id %}" method="post">
+        <!-- 여기서 item 은 views.review_create 의 item 이고
+         url 의 주소는 restaurant_id=item.id 형식으로 만들겠다는 뜻이다.
+         그리고 method 가 post 임을 던져주면  views에서 if 줄을 실행한다-->
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit">등록</button>
+    </form>
+</div>
+
+{% endblock %}

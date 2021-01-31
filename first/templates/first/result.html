@@ -1,0 +1,12 @@
+{% extends 'first/base.html' %}
+{% load static %}
+{% block content %}
+    <h3> 추천 번호는 다음과 같습니다.</h3>
+    <div style="text-align:left;">
+    <ul>                                <!--ul은 li와 함께 list를 만들어 준다-->
+        {% for num in numbers %}
+        <li>{{ num  }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endblock %}

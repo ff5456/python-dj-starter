@@ -1,0 +1,13 @@
+{% extends 'first/base.html' %}
+{% load static %}
+{% block content %}
+<!-- base의 block content 이후에 이게 표시된다는 뜻이다 -->
+    <p>Hello World!</p>                                       <!-- p는 문단을 나눠준다-->
+
+    <img src="{% static 'first/image.jpg'%}" alt="바스키아" />                       <!-- settings 에 STATICFILES_DIRS에 저장 했으므로 바로 찾음-->
+    <p>{{  current_date }}</p>                                <!-- html로 출력만을 원할 때는 중괄호 2번-->
+    <p>{{  current_date|date:"y년 m월 d일 h시 i분 s초"  }}</p>
+
+    <a href = "{%url 'select' %}" >시작하기!</a>               <!-- url 의 name 과 일치하기만 하면 된다-->
+                                                              <!-- html로 python syntax를 원할 때는 중괄호 2번-->
+{% endblock %}
